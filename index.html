@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 	<head>
 		<style>
 			h1{
@@ -27,7 +28,7 @@
 	<body>
 		<h1>MezMeRriZze's Blog</h1>
 		<p>Competitive Programming\n\nMachine Learning\n\nComputer Graphics\n\nCuisine</p>
-        <div class="ACM2017WF">
+        <div class="ACM2017WF" data-ng-controllet="AppCtrl" id="myWebsite">
             <div class="problemC">
                 We identify that this problem is simply a max bipartite matching problem. Since a row index and a column index defines a position, a high pile of crates can only contributes to at most one column and one row, i.e. no more than two. So we need to match the rows and columns that have same highest pile together via MaxFlow algorithm. But notice that if without the third camera, the bipartite graph is complete, so we do not need to use max flow, but since we have a third camera, the bipartite graph is incomplete, thus the greedy algorithm will not work. So we model the graph in a way that row i and column j have an edge iff the third camera indicates that there was originally a crate before we steal anything. Dinic results in O(V^2E).<br><br>
             </div>
@@ -41,6 +42,8 @@
                 num is the number of different R values we have utilized now, and lastv is the largest of those. Delta is the change of entropy when changing the largest v from v' to lastv, because the entropy stays unaffected by any lower v.
                 We also need to memoize delta to speed up, this results in O(n^3).<br><br>
             </div>
+
+            <md-button class="button" ng-click="showAlert($event)" > click </md-button>
         </div>
 	</body>
 </html>
